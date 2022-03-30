@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:w:analyze": "npm run build -- --stats-json && npm run view:w:analyze",
+    "view:w:analyze": "webpack-bundle-analyzer dist/nb-admin/stats.json",
+    "build:analyze": "npm run build -- --source-map && npm run view:analyze",
+    "view:analyze": "source-map-explorer dist/nb-admin/*"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +26,7 @@
     "@bigbear713/nb-form": "^12.1.0",
     "@bigbear713/nb-trans": "^12.1.0",
     "dayjs": "^1.11.0",
+    "ng-zorro-antd": "^12.1.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -38,6 +43,8 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.3.5"
+    "source-map-explorer": "^2.5.2",
+    "typescript": "~4.3.5",
+    "webpack-bundle-analyzer": "^3.5.0"
   }
 }

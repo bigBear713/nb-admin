@@ -1,0 +1,1 @@
+export const langKey = 'nb-admin-language';
