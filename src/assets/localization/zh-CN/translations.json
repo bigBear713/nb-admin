@@ -1,1 +1,7 @@
-{}
+{
+  "login": {
+    "success": "登录成功!",
+    "acctRequired": "请输入账号",
+    "pwdRequired": "请输入密码"
+  }
+}

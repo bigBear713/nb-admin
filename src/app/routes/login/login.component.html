@@ -1,5 +1,18 @@
-<p>
-  login works!
-</p>
-
-<a routerLink="/dashboard">dashboard</a>
+<nz-card>
+  <form [formGroup]="form" class="login-form">
+    <nb-field-item [control]="acctControl" [errInfo]="acctErrInfo">
+      <ng-container field-label>账号</ng-container>
+      <input type="text" nz-input [formControl]="acctControl" [nbPlaceholder]="(acctConfig.placeholder||'')|nbTrans"
+        (keydown.enter)="pwdEle.focus()">
+    </nb-field-item>
+    <nb-field-item [control]="pwdControl" [errInfo]="pwdErrInfo">
+      <ng-container field-label>密码</ng-container>
+      <input #pwdEle type="password" nz-input [formControl]="pwdControl"
+        [nbPlaceholder]="(pwdConfig.placeholder||'')|nbTrans" (keydown.enter)="onLogin()">
+    </nb-field-item>
+    <nb-field-item>
+      <span field-label></span>
+      <button type="button" nz-button (click)="onLogin()">登录</button>
+    </nb-field-item>
+  </form>
+</nz-card>
