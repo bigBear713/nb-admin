@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LoadTransService implements Resolve<boolean> {
+export class TransGuardService implements Resolve<boolean> {
 
   constructor(
     private transService: NbTransService,
   ) { }
 
-  resolve(): boolean | Observable<boolean> | Promise<boolean> {
+  resolve(): Observable<boolean> {
     return this.transService.subscribeLoadDefaultOver();
   }
 

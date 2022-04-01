@@ -24,6 +24,9 @@
       "@constants/*": [
         "src/app/constants/*",
       ],
+      "@guards/*": [
+        "src/app/shared/guards/*",
+      ],
       "@utils/*": [
         "src/app/shared/utils/*",
       ]

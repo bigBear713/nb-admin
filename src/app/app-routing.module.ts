@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoadTransService } from './services/load-trans.service';
+import { TransGuardService } from '@guards/trans-guard.service';
 
 const routes: Routes = [
   {
     path: '',
     resolve: {
-      transLoad: LoadTransService,
+      loadTrans: TransGuardService,
     },
     children: [
       {
